@@ -66,68 +66,69 @@ const VendasRHTurbo360 = () => {
 
       {/* Seção 1 — Headline + Promessa (ESCURO) */}
       <SectionWrapper variant="dark" id="hero">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center animate-fade-in">
-          {/* Coluna Esquerda - Textos */}
-          <div className="text-left">
-            <div className="flex justify-center lg:justify-start mb-8">
-              <img src={rhTurboHeroLogo} alt="RH Turbo 360 Logo" className="w-full max-w-[266px] md:max-w-[310px] h-auto" />
-            </div>
-            
-            <h1 className="font-heading font-extrabold text-3xl md:text-4xl lg:text-5xl mb-6 leading-tight">Automatize o RH da sua empresa em UM clique com IA e transforme seu rotina com mais tempo, precisão e respeito aos talentos</h1>
-            
-            <p className="text-lg md:text-xl text-rh-muted-dark mb-8 leading-relaxed">12 agentes de IA orquestrados para eficiência, precisão e humanização — do diagnóstico ao desligamento.</p>
-            
-            {/* Selos de confiança */}
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6 text-sm text-rh-muted-dark mb-8">
-              <div className="flex items-center gap-2">
-                <Shield className="w-5 h-5 text-rh-orange" />
-                <span>Garantia de 7 dias</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Users className="w-5 h-5 text-rh-orange" />
-                <span>Suporte humano</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Clock className="w-5 h-5 text-rh-orange" />
-                <span>Acesso imediato</span>
-              </div>
-            </div>
+        <div className="flex flex-col items-center text-center max-w-4xl mx-auto animate-fade-in">
+          {/* Logo */}
+          <div className="mb-8">
+            <img src={rhTurboHeroLogo} alt="RH Turbo 360 Logo" className="w-full max-w-[266px] md:max-w-[310px] h-auto" />
+          </div>
+          
+          {/* Headline */}
+          <h1 className="font-heading font-extrabold text-3xl md:text-4xl lg:text-5xl mb-6 leading-tight">Automatize o RH da sua empresa em UM clique com IA e transforme seu rotina com mais tempo, precisão e respeito aos talentos</h1>
+          
+          {/* Subtitle */}
+          <p className="text-lg md:text-xl text-rh-muted-dark mb-8 leading-relaxed">12 agentes de IA orquestrados para eficiência, precisão e humanização — do diagnóstico ao desligamento.</p>
+          
+          {/* 1. Benefit List */}
+          <ul className="space-y-4 mb-8 text-left max-w-2xl w-full">
+              <li className="flex gap-3 items-start">
+                <Check className="w-5 h-5 text-rh-orange flex-shrink-0 mt-1" />
+                <span className="text-rh-muted-dark">
+                  Como eliminar tarefas repetitivas com IA, mesmo que você não entenda nada de tecnologia.
+                </span>
+              </li>
+              <li className="flex gap-3 items-start">
+                <Check className="w-5 h-5 text-rh-orange flex-shrink-0 mt-1" />
+                <span className="text-rh-muted-dark">
+                  Os erros invisíveis que estão drenando tempo e dinheiro do seu RH.
+                </span>
+              </li>
+              <li className="flex gap-3 items-start">
+                <Check className="w-5 h-5 text-rh-orange flex-shrink-0 mt-1" />
+                <span className="text-rh-muted-dark">
+                  O passo a passo para ter um RH mais estratégico, reconhecido e com resultados comprovados.
+                </span>
+              </li>
+            </ul>
 
-            <ul className="space-y-4 mb-8">
-                <li className="flex gap-3 items-start">
-                  <Check className="w-5 h-5 text-rh-orange flex-shrink-0 mt-1" />
-                  <span className="text-rh-muted-dark">
-                    Como eliminar tarefas repetitivas com IA, mesmo que você não entenda nada de tecnologia.
-                  </span>
-                </li>
-                <li className="flex gap-3 items-start">
-                  <Check className="w-5 h-5 text-rh-orange flex-shrink-0 mt-1" />
-                  <span className="text-rh-muted-dark">
-                    Os erros invisíveis que estão drenando tempo e dinheiro do seu RH.
-                  </span>
-                </li>
-                <li className="flex gap-3 items-start">
-                  <Check className="w-5 h-5 text-rh-orange flex-shrink-0 mt-1" />
-                  <span className="text-rh-muted-dark">
-                    O passo a passo para ter um RH mais estratégico, reconhecido e com resultados comprovados.
-                  </span>
-                </li>
-              </ul>
+          {/* 2. "ASSISTIR AGORA" text */}
+          <h3 className="font-heading font-bold text-2xl mb-6 text-center text-rh-text-dark">
+            ASSISTIR AGORA
+          </h3>
 
-            {/* CTA */}
-            <div className="flex justify-center lg:justify-start">
-              <CTAButton size="lg" onClick={() => handleCTAClick("hero-primary")}>
-                QUERO O RH TURBO 360
-              </CTAButton>
+          {/* 3. Woman Image */}
+          <img src={heroImage} alt="Profissional de RH estratégico" className="w-full max-w-lg rounded-2xl mb-8" />
+
+          {/* 4. Trust Badges */}
+          <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-rh-muted-dark mb-8">
+            <div className="flex items-center gap-2">
+              <Shield className="w-5 h-5 text-rh-orange" />
+              <span>Garantia de 7 dias</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Users className="w-5 h-5 text-rh-orange" />
+              <span>Suporte humano</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Clock className="w-5 h-5 text-rh-orange" />
+              <span>Acesso imediato</span>
             </div>
           </div>
 
-          {/* Coluna Direita - Imagem */}
-          <div className="relative flex flex-col items-center justify-center">
-            <h3 className="font-heading font-bold text-2xl mb-6 text-center text-rh-text-dark">
-              ASSISTIR AGORA
-            </h3>
-            <img src={heroImage} alt="Profissional de RH estratégico" className="w-full max-w-lg rounded-2xl" />
+          {/* 5. CTA Button */}
+          <div className="flex justify-center">
+            <CTAButton size="lg" onClick={() => handleCTAClick("hero-primary")}>
+              QUERO O RH TURBO 360
+            </CTAButton>
           </div>
         </div>
       </SectionWrapper>
@@ -493,7 +494,7 @@ const VendasRHTurbo360 = () => {
             Automatize tarefas em 1 clique e libere seu tempo para o
             estratégico. Comece hoje mesmo com garantia de 7 dias.
           </p>
-          <CTAButton size="lg" onClick={() => handleCTAClick("final")} className="w-full sm:w-auto mb-8">
+          <CTAButton size="lg" onClick={() => handleCTAClick("final")} className="w-full sm-w-auto mb-8">
             SIM, EU QUERO O RH TURBO 360
           </CTAButton>
 
