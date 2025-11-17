@@ -69,31 +69,31 @@ const VendasRHTurbo360 = () => {
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center animate-fade-in">
           {/* Coluna Esquerda - Textos */}
           <div className="text-left">
-            <div className="flex justify-center mb-8">
+            <div className="flex justify-center lg:justify-start mb-8">
               <img src={rhTurboHeroLogo} alt="RH Turbo 360 Logo" className="w-full max-w-[266px] md:max-w-[310px] h-auto" />
             </div>
             
             <h1 className="font-heading font-extrabold text-3xl md:text-4xl lg:text-5xl mb-6 leading-tight">Automatize o RH da sua empresa em UM clique com IA e transforme seu rotina com mais tempo, precisão e respeito aos talentos</h1>
             
-            <p className="text-lg md:text-xl text-rh-muted-dark mb-6 leading-relaxed">12 agentes de IA orquestrados para eficiência, precisão e humanização — do diagnóstico ao desligamento.</p>
+            <p className="text-lg md:text-xl text-rh-muted-dark mb-8 leading-relaxed">12 agentes de IA orquestrados para eficiência, precisão e humanização — do diagnóstico ao desligamento.</p>
             
-            {/* CTA */}
-            <div className="flex justify-center">
-              <CTAButton size="lg" onClick={() => handleCTAClick("hero-primary")} className="mb-8">
-                QUERO O RH TURBO 360
-              </CTAButton>
+            {/* Selos de confiança */}
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6 text-sm text-rh-muted-dark mb-8">
+              <div className="flex items-center gap-2">
+                <Shield className="w-5 h-5 text-rh-orange" />
+                <span>Garantia de 7 dias</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Users className="w-5 h-5 text-rh-orange" />
+                <span>Suporte humano</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Clock className="w-5 h-5 text-rh-orange" />
+                <span>Acesso imediato</span>
+              </div>
             </div>
-          </div>
 
-          {/* Coluna Direita - Imagem */}
-          <div className="relative flex flex-col items-center justify-center">
-            <h3 className="font-heading font-bold text-2xl mb-6 text-center text-rh-text-dark">
-              ASSISTIR AGORA
-            </h3>
-            <img src={heroImage} alt="Profissional de RH estratégico" className="w-full max-w-lg rounded-2xl mb-8" />
-            
-            <div className="w-full max-w-lg">
-              <ul className="space-y-4 mb-8">
+            <ul className="space-y-4 mb-8">
                 <li className="flex gap-3 items-start">
                   <Check className="w-5 h-5 text-rh-orange flex-shrink-0 mt-1" />
                   <span className="text-rh-muted-dark">
@@ -113,23 +113,21 @@ const VendasRHTurbo360 = () => {
                   </span>
                 </li>
               </ul>
+
+            {/* CTA */}
+            <div className="flex justify-center lg:justify-start">
+              <CTAButton size="lg" onClick={() => handleCTAClick("hero-primary")}>
+                QUERO O RH TURBO 360
+              </CTAButton>
             </div>
-            
-            {/* Selos de confiança */}
-            <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-rh-muted-dark">
-              <div className="flex items-center gap-2">
-                <Shield className="w-5 h-5 text-rh-orange" />
-                <span>Garantia de 7 dias</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Users className="w-5 h-5 text-rh-orange" />
-                <span>Suporte humano</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Clock className="w-5 h-5 text-rh-orange" />
-                <span>Acesso imediato</span>
-              </div>
-            </div>
+          </div>
+
+          {/* Coluna Direita - Imagem */}
+          <div className="relative flex flex-col items-center justify-center">
+            <h3 className="font-heading font-bold text-2xl mb-6 text-center text-rh-text-dark">
+              ASSISTIR AGORA
+            </h3>
+            <img src={heroImage} alt="Profissional de RH estratégico" className="w-full max-w-lg rounded-2xl" />
           </div>
         </div>
       </SectionWrapper>
