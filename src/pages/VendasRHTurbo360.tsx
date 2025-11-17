@@ -11,7 +11,7 @@ import heroImage from "@/assets/hero-businesswoman.png";
 import pedroNetoImage from "@/assets/pedro-neto.png";
 import rhTurboLogo from "@/assets/rh-turbo-360-logo.png";
 import rhTurboHeaderLogo from "@/assets/rh-turbo-header-logo.png";
-import rhTurboHeroLogo from "@/assets/rh-turbo-hero-logo-new.png";
+import rhTurboHeroLogo from "@/assets/rh-turbo-hero-logo.png";
 import turboBadge from "@/assets/turbo-badge.png";
 import depoimentoChinita from "@/assets/depoimento-cintia-hq.jpeg";
 import depoimentoAnneBeatriz from "@/assets/depoimento-anne-hq.jpeg";
