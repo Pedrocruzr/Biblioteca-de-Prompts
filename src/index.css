@@ -9,13 +9,13 @@
 @layer base {
   :root {
     /* Background Colors (HSL) */
-    --bg-dark: 225 25% 10%; /* #131620 - Corrigido para combinar com a nova logo */
+    --bg-dark: 225 50% 8.4%; /* #0B1020 - Corrigido para combinar com a logo */
     --bg-light: 220 30% 96%; /* #F4F6FA */
     
     /* Text Colors */
     --text-on-dark: 0 0% 100%; /* Branco puro */
     --text-muted-dark: 214 32% 80%; /* #CBD5E1 */
-    --text-on-light: 225 25% 10%; /* #131620 */
+    --text-on-light: 225 50% 8.4%; /* #0B1020 */
     
     /* Accent Colors */
     --accent-orange: 20 100% 62%; /* #FF8A3D */
@@ -43,10 +43,10 @@
     
     /* Default theme tokens (mantendo compatibilidade) */
     --background: 0 0% 100%;
-    --foreground: 225 25% 10%;
+    --foreground: 225 50% 8.4%;
     --card: 0 0% 100%;
-    --card-foreground: 225 25% 10%;
-    --primary: 225 25% 10%;
+    --card-foreground: 225 50% 8.4%;
+    --primary: 225 50% 8.4%;
     --primary-foreground: 0 0% 100%;
     --muted: 220 13% 91%;
     --muted-foreground: 214 32% 60%;
