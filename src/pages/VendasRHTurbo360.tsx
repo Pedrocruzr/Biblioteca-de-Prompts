@@ -70,7 +70,7 @@ const VendasRHTurbo360 = () => {
           {/* Coluna Esquerda - Textos */}
           <div className="text-left">
             <div className="flex justify-center mb-8">
-              <img src={rhTurboHeroLogo} alt="RH Turbo 360 Logo" className="w-full max-w-[266px] md:max-w-[310px] h-auto bg-rh-dark p-4 rounded-lg" />
+              <img src={rhTurboHeroLogo} alt="RH Turbo 360 Logo" className="w-full max-w-[266px] md:max-w-[310px] h-auto" />
             </div>
             
             <h1 className="font-heading font-extrabold text-3xl md:text-4xl lg:text-5xl mb-6 leading-tight">Automatize o RH da sua empresa em UM clique com IA e transforme seu rotina com mais tempo, precisão e respeito aos talentos</h1>
@@ -80,9 +80,11 @@ const VendasRHTurbo360 = () => {
             
 
             {/* CTA */}
-            <CTAButton size="lg" onClick={() => handleCTAClick("hero-primary")} className="mb-8">
-              QUERO O RH TURBO 360
-            </CTAButton>
+            <div className="flex justify-center">
+              <CTAButton size="lg" onClick={() => handleCTAClick("hero-primary")} className="mb-8">
+                QUERO O RH TURBO 360
+              </CTAButton>
+            </div>
 
             {/* Selos de confiança */}
             <div className="flex flex-wrap items-center gap-6 text-sm text-rh-muted-dark">
