@@ -336,17 +336,18 @@ const VendasRHTurbo360 = () => {
           <div className="space-y-4 mb-8">
             {[{
             title: 'Playbook "Recrutamento e Seleção com IA"',
-            value: "R$ 97"
-          }, {
-            title: "Biblioteca de Descrição de Cargo",
             value: "R$ 67"
           }, {
+            title: "Analista de Pesquisa de Clima",
+            value: "R$ 67",
+            desc: "Interpreta respostas de pesquisas internas e gera relatórios automáticos."
+          }, {
             title: "Mentor de Dinâmicas",
-            value: "R$ 97",
+            value: "R$ 67",
             desc: "Seleciona e orienta atividades de avaliação eficazes"
           }, {
             title: "Teste de Perfil Comportamental (DISC)",
-            value: "R$ 97",
+            value: "R$ 67",
             desc: "Teste Disc completo com relatório de matriz"
           }].map((bonus, idx) => <div key={idx} className="flex items-center justify-between p-4 bg-white rounded-xl">
                 <div className="flex-1">
@@ -357,7 +358,7 @@ const VendasRHTurbo360 = () => {
                       {bonus.desc}
                     </p>}
                 </div>
-                <span className="text-rh-magenta font-bold whitespace-nowrap ml-4">
+                <span className="text-rh-magenta font-bold whitespace-nowrap ml-4 line-through">
                   {bonus.value}
                 </span>
               </div>)}
@@ -365,12 +366,12 @@ const VendasRHTurbo360 = () => {
 
           <div className="border-t-2 border-rh-magenta/30 pt-6 text-center">
             <p className="text-rh-text-light/70 mb-2">Valor Total:</p>
-            <p className="text-3xl font-heading font-bold text-rh-text-light line-through mb-4">R$ 358,00</p>
+            <p className="text-3xl font-heading font-bold text-rh-text-light line-through mb-4">R$ 268,00</p>
             <p className="text-rh-text-light/70 mb-2">
               Seu Investimento Hoje:
             </p>
             <p className="font-heading font-extrabold text-gradient mb-4 text-7xl">R$ 197,00</p>
-            <p className="text-xl font-semibold text-rh-magenta">Economia de R$ 161,00</p>
+            <p className="text-xl font-semibold text-rh-magenta">Economia de R$ 71,00</p>
           </div>
         </div>
       </SectionWrapper>
