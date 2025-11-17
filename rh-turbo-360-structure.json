@@ -1,0 +1,564 @@
+{
+  "project": {
+    "name": "RH Turbo 360 - Landing Page",
+    "description": "Landing page de alta conversão para o método RH Turbo 360 com 12 agentes de IA",
+    "framework": "React + TypeScript + Vite",
+    "styling": "Tailwind CSS"
+  },
+  "design_system": {
+    "fonts": {
+      "heading": "Inter (Google Fonts)",
+      "body": "Open Sans (Google Fonts)",
+      "weights": [400, 500, 600, 700, 800]
+    },
+    "colors": {
+      "backgrounds": {
+        "dark": {
+          "hsl": "222 75% 6%",
+          "hex": "#0B1020",
+          "usage": "Seções escuras, header sticky"
+        },
+        "light": {
+          "hsl": "220 30% 96%",
+          "hex": "#F4F6FA",
+          "usage": "Seções claras, fundo de cards"
+        }
+      },
+      "text": {
+        "on_dark": {
+          "hsl": "0 0% 100%",
+          "hex": "#FFFFFF",
+          "usage": "Texto principal em fundo escuro"
+        },
+        "muted_dark": {
+          "hsl": "214 32% 80%",
+          "hex": "#CBD5E1",
+          "usage": "Texto secundário em fundo escuro"
+        },
+        "on_light": {
+          "hsl": "222 75% 6%",
+          "hex": "#0B1020",
+          "usage": "Texto em fundo claro"
+        }
+      },
+      "accents": {
+        "orange": {
+          "hsl": "20 100% 62%",
+          "hex": "#FF8A3D",
+          "usage": "Destaques, ícones, badges"
+        },
+        "magenta": {
+          "hsl": "344 100% 59%",
+          "hex": "#FF2E6D",
+          "usage": "Elementos interativos, timer"
+        },
+        "cta_pink": {
+          "hsl": "344 100% 69%",
+          "hex": "#FF5F8F",
+          "usage": "Início do gradiente CTA"
+        },
+        "cta_orange": {
+          "hsl": "28 100% 68%",
+          "hex": "#FFA65C",
+          "usage": "Fim do gradiente CTA"
+        }
+      }
+    },
+    "gradients": {
+      "cta": "linear-gradient(135deg, hsl(344 100% 69%), hsl(28 100% 68%))",
+      "cta_hover": "linear-gradient(135deg, hsl(344 100% 64%), hsl(28 100% 63%))",
+      "text": "bg-gradient-to-r from-rh-cta-pink to-rh-cta-orange"
+    },
+    "spacing": {
+      "section_padding_mobile": "4rem 1rem",
+      "section_padding_desktop": "6rem 1rem",
+      "container_max_width": "1280px"
+    },
+    "borders": {
+      "radius": "1rem",
+      "radius_xl": "1.5rem",
+      "radius_2xl": "1.5rem",
+      "color_light": "hsl(220 13% 91%)"
+    },
+    "shadows": {
+      "soft": "0 10px 30px -10px hsl(222 75% 6% / 0.15)",
+      "glow": "0 0 40px hsl(344 100% 69% / 0.3)"
+    },
+    "animations": {
+      "fade_in": {
+        "duration": "0.6s",
+        "timing": "ease-out",
+        "from": {
+          "opacity": 0,
+          "transform": "translateY(20px)"
+        },
+        "to": {
+          "opacity": 1,
+          "transform": "translateY(0)"
+        }
+      },
+      "slide_up": {
+        "duration": "0.5s",
+        "timing": "ease-out"
+      }
+    },
+    "transitions": {
+      "smooth": "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
+    }
+  },
+  "components": {
+    "CTAButton": {
+      "file": "src/components/VendasRH/CTAButton.tsx",
+      "variants": {
+        "primary": {
+          "style": "Gradiente rosa-laranja com sombra e hover scale",
+          "classes": "bg-gradient-to-r from-rh-cta-pink to-rh-cta-orange"
+        },
+        "secondary": {
+          "style": "Borda com hover bg claro",
+          "classes": "border-2 border-current hover:bg-white/10"
+        }
+      },
+      "sizes": {
+        "default": "px-8 py-4 text-base",
+        "lg": "px-10 py-5 text-lg"
+      },
+      "props": ["variant", "size", "onClick", "className", "children"]
+    },
+    "SectionWrapper": {
+      "file": "src/components/VendasRH/SectionWrapper.tsx",
+      "variants": {
+        "dark": "section-dark (fundo escuro #0B1020)",
+        "light": "section-light (fundo claro #F4F6FA)"
+      },
+      "props": ["variant", "children", "className", "id"]
+    },
+    "CountdownTimer": {
+      "file": "src/components/VendasRH/CountdownTimer.tsx",
+      "description": "Timer regressivo de 59 minutos",
+      "style": "Números grandes com fundo branco em cards arredondados",
+      "state": "timeLeft (em segundos)",
+      "update_interval": "1 segundo"
+    },
+    "TestimonialCard": {
+      "file": "src/components/VendasRH/TestimonialCard.tsx",
+      "structure": {
+        "quote": "Texto ou imagem do depoimento",
+        "author": {
+          "avatar": "Imagem circular 48x48px",
+          "name": "Nome em negrito",
+          "role": "Cargo",
+          "company": "Empresa"
+        },
+        "result": "Badge com resultado destaque"
+      },
+      "props": ["quote", "name", "role", "company", "result", "avatar"]
+    },
+    "ModuleCard": {
+      "file": "src/components/VendasRH/ModuleCard.tsx",
+      "description": "Card expansível com lista de agentes de IA",
+      "structure": {
+        "header": {
+          "icon": "Emoji 3xl",
+          "title": "Título do módulo",
+          "toggle": "Ícone chevron animado"
+        },
+        "content": {
+          "agents": [
+            {
+              "name": "Nome do agente",
+              "description": "Descrição funcional"
+            }
+          ]
+        }
+      },
+      "state": "isOpen (boolean)",
+      "animation": "max-height com transição suave"
+    },
+    "FAQItem": {
+      "file": "src/components/VendasRH/FAQItem.tsx",
+      "description": "Item de FAQ com pergunta/resposta expansível",
+      "props": ["question", "answer"],
+      "state": "isOpen (boolean)"
+    }
+  },
+  "pages": {
+    "VendasRHTurbo360": {
+      "file": "src/pages/VendasRHTurbo360.tsx",
+      "route": "/vendas-rh-turbo360",
+      "sections": [
+        {
+          "id": "header",
+          "type": "sticky_header",
+          "variant": "dark",
+          "elements": ["Logo Turbo Badge", "CTA Button (desktop only)"]
+        },
+        {
+          "id": "hero",
+          "name": "Seção 1 - Headline + Promessa",
+          "variant": "dark",
+          "layout": "grid 2 colunas (lg)",
+          "left_column": [
+            "Logo RH Turbo 360",
+            "Headline H1",
+            "Subtítulo",
+            "Lista de benefícios (4 itens com ícones)",
+            "CTA Button primário"
+          ],
+          "right_column": [
+            "Imagem hero (businesswoman)"
+          ]
+        },
+        {
+          "id": "problema",
+          "name": "Seção 2 - Problema e Solução",
+          "variant": "light",
+          "elements": [
+            "Título H2",
+            "4 cards de problemas com ícones (Shield, Users, Clock, Zap)",
+            "Transição para solução",
+            "Texto destacado",
+            "CTA Button"
+          ]
+        },
+        {
+          "id": "solucao",
+          "name": "Seção 3 - Módulos e Agentes",
+          "variant": "dark",
+          "modules": [
+            {
+              "icon": "🔍",
+              "title": "Módulo 1 - Diagnóstico Inteligente",
+              "agents_count": 2,
+              "agents": [
+                "Coletor de Dados Six Box",
+                "Analista de Gaps & Oportunidades"
+              ]
+            },
+            {
+              "icon": "🎯",
+              "title": "Módulo 2 - Recrutamento Cirúrgico",
+              "agents_count": 5,
+              "agents": [
+                "Agente de Descrição de Vagas por Competências",
+                "Analista de Entrevista Automatizado",
+                "Teste de Perfil Comportamental",
+                "Especialista em Taxa de Aderência com a Vaga",
+                "Elaborador de Proposta de Trabalho"
+              ]
+            },
+            {
+              "icon": "🚀",
+              "title": "Módulo 3 - Desenvolvimento Acelerado",
+              "agents_count": 3,
+              "agents": [
+                "Analista em Mapeamento de Competências",
+                "Mentor de Dinâmicas",
+                "Roteirizador de PDI"
+              ]
+            },
+            {
+              "icon": "🤝",
+              "title": "Módulo 4 - Transições Humanizadas",
+              "agents_count": 2,
+              "agents": [
+                "Roteirizador de Onboarding",
+                "Orquestrador de Desligamento Humanizado"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "como-funciona",
+          "name": "Seção 4 - Como Funciona",
+          "variant": "light",
+          "steps": [
+            {
+              "number": "01",
+              "title": "Diagnóstico automatizado",
+              "description": "Mapeia toda a operação de RH"
+            },
+            {
+              "number": "02",
+              "title": "Agentes inteligentes",
+              "description": "12 agentes de IA em ação"
+            },
+            {
+              "number": "03",
+              "title": "Transformação real",
+              "description": "Resultados em semanas"
+            }
+          ]
+        },
+        {
+          "id": "depoimentos",
+          "name": "Seção 5 - Provas Sociais",
+          "variant": "dark",
+          "testimonials": [
+            {
+              "type": "image",
+              "image": "depoimento-cintia-hq.jpeg",
+              "image_width": "75%",
+              "name": "Cíntia Oliveira",
+              "role": "Gerente de RH",
+              "company": "TechCorp Brasil",
+              "result": "Redução de 40% no tempo de contratação",
+              "avatar": "avatar-cintia.png"
+            },
+            {
+              "type": "image",
+              "image": "depoimento-anne-hq.jpeg",
+              "image_width": "75%",
+              "name": "Anne Beatriz",
+              "role": "Diretor de Pessoas",
+              "company": "Inovação SA",
+              "result": "50% menos tempo no onboarding",
+              "avatar": "avatar-anne.png"
+            }
+          ]
+        },
+        {
+          "id": "urgencia",
+          "name": "Seção 6 - Urgência com Timer",
+          "variant": "light",
+          "elements": [
+            "Badge 'Oferta Limitada'",
+            "Countdown Timer (59 minutos)",
+            "Texto de urgência",
+            "Valor de R$ 197",
+            "CTA Button"
+          ]
+        },
+        {
+          "id": "garantia",
+          "name": "Seção 7 - Garantia",
+          "variant": "dark",
+          "elements": [
+            "Ícone Shield grande",
+            "Título 'Garantia Incondicional'",
+            "Texto explicativo",
+            "CTA Button"
+          ]
+        },
+        {
+          "id": "quem-e",
+          "name": "Seção 8 - Quem Criou",
+          "variant": "light",
+          "layout": "2 colunas (md)",
+          "left_column": [
+            "Imagem Pedro Neto"
+          ],
+          "right_column": [
+            "Nome e título",
+            "Biografia",
+            "Lista de credenciais (4 itens)"
+          ]
+        },
+        {
+          "id": "faq",
+          "name": "Seção 9 - FAQ",
+          "variant": "dark",
+          "questions": [
+            "O que é o RH Turbo 360?",
+            "Preciso ter conhecimento técnico?",
+            "Funciona para empresas de qualquer tamanho?",
+            "Como acesso o conteúdo?",
+            "Posso usar em qualquer setor?"
+          ]
+        },
+        {
+          "id": "cta-final",
+          "name": "Seção 10 - CTA Final",
+          "variant": "light",
+          "elements": [
+            "Título forte",
+            "Lista de benefícios finais (4 itens com Check)",
+            "CTA Button grande",
+            "Garantia reminder"
+          ]
+        },
+        {
+          "id": "footer",
+          "name": "Footer",
+          "variant": "dark",
+          "elements": [
+            "Copyright",
+            "Link de privacidade"
+          ]
+        }
+      ]
+    },
+    "Index": {
+      "file": "src/pages/Index.tsx",
+      "route": "/",
+      "description": "Página inicial com redirecionamento para vendas",
+      "elements": [
+        "Logo RH Turbo 360",
+        "Título e subtítulo",
+        "Botão para página de vendas"
+      ]
+    },
+    "NotFound": {
+      "file": "src/pages/NotFound.tsx",
+      "route": "*",
+      "description": "Página 404"
+    }
+  },
+  "assets": {
+    "logos": [
+      {
+        "file": "rh-turbo-360-logo.png",
+        "usage": "Logo principal"
+      },
+      {
+        "file": "rh-turbo-header-logo.png",
+        "usage": "Logo header"
+      },
+      {
+        "file": "rh-turbo-hero-logo-new.png",
+        "usage": "Logo hero seção 1",
+        "dimensions": "266x310px (mobile/desktop)"
+      },
+      {
+        "file": "turbo-badge.png",
+        "usage": "Badge header sticky",
+        "height": "48-64px"
+      }
+    ],
+    "images": [
+      {
+        "file": "hero-businesswoman.png",
+        "usage": "Imagem hero seção 1",
+        "position": "Coluna direita"
+      },
+      {
+        "file": "pedro-neto.png",
+        "usage": "Foto do criador na seção 8",
+        "style": "rounded-2xl shadow-soft"
+      }
+    ],
+    "testimonials": [
+      {
+        "file": "depoimento-cintia-hq.jpeg",
+        "usage": "Depoimento visual Cíntia",
+        "width": "75%",
+        "quality": "High quality"
+      },
+      {
+        "file": "depoimento-anne-hq.jpeg",
+        "usage": "Depoimento visual Anne Beatriz",
+        "width": "75%",
+        "quality": "High quality"
+      }
+    ],
+    "avatars": [
+      {
+        "file": "avatar-cintia.png",
+        "usage": "Avatar Cíntia no card de depoimento",
+        "size": "48x48px"
+      },
+      {
+        "file": "avatar-anne.png",
+        "usage": "Avatar Anne no card de depoimento",
+        "size": "48x48px"
+      }
+    ],
+    "unused_assets": [
+      "depoimento-anne-beatriz.jpeg",
+      "depoimento-chinita-new.jpeg",
+      "depoimento-chinita.png"
+    ]
+  },
+  "seo": {
+    "title": "Método RH Turbo 360 — 12 Agentes de IA para Automatizar o RH",
+    "description": "Automatize o ciclo completo de RH com 12 agentes de IA: diagnóstico, recrutamento cirúrgico, desenvolvimento acelerado e transições humanizadas. Economize tempo e aumente a precisão.",
+    "og_type": "product",
+    "og_title": "RH Turbo 360 — Automatize RH com IA",
+    "og_description": "12 agentes de IA para transformar seu RH: do diagnóstico ao desligamento humanizado.",
+    "twitter_card": "summary_large_image",
+    "canonical": "/vendas-rh-turbo360"
+  },
+  "analytics": {
+    "facebook_pixel": {
+      "events": [
+        "PageView (on mount)",
+        "InitiateCheckout (on CTA click)"
+      ],
+      "parameters": {
+        "content_name": "RH Turbo 360",
+        "content_category": "Curso",
+        "value": 197.0,
+        "currency": "BRL"
+      }
+    },
+    "google_analytics": {
+      "events": [
+        {
+          "name": "purchase_click",
+          "category": "CTA",
+          "label": "location (header, hero, urgencia, etc)"
+        }
+      ]
+    }
+  },
+  "cta_locations": [
+    "header (desktop only)",
+    "hero (seção 1)",
+    "problema (seção 2)",
+    "urgencia (seção 6)",
+    "garantia (seção 7)",
+    "cta-final (seção 10)"
+  ],
+  "copy": {
+    "product_name": "RH Turbo 360",
+    "main_promise": "Automatize o RH da sua empresa em UM clique com IA e transforme seu rotina com mais tempo, precisão e respeito aos talentos",
+    "price": "R$ 197",
+    "agents_count": 12,
+    "modules_count": 4,
+    "guarantee": "Garantia Incondicional de 7 dias",
+    "urgency": "Oferta válida por tempo limitado",
+    "timer_duration": "59 minutos"
+  },
+  "target_audience": {
+    "segments": [
+      "RHs sobrecarregados que querem automatizar sem depender do TI",
+      "Pequenas empresas sem verba para consultorias caras",
+      "Profissionais de RH que querem se destacar com estratégia e tecnologia",
+      "Gestores que querem transformar o RH de centro de custo para motor de crescimento"
+    ],
+    "pain_points": [
+      "Cansaço com tarefas operacionais",
+      "Falta de reconhecimento e papel estratégico",
+      "Retrabalho e erros em planilhas",
+      "Prazos fora de controle com comunicação truncada"
+    ]
+  },
+  "technical_stack": {
+    "framework": "React 18.3.1",
+    "language": "TypeScript",
+    "build_tool": "Vite",
+    "styling": "Tailwind CSS 3.x",
+    "router": "React Router DOM 6.30.1",
+    "animations": "tailwindcss-animate",
+    "icons": "lucide-react 0.462.0",
+    "meta_tags": "react-helmet 6.1.0",
+    "state": "React hooks (useState, useEffect)",
+    "utilities": [
+      "class-variance-authority",
+      "clsx",
+      "tailwind-merge"
+    ]
+  },
+  "responsive_breakpoints": {
+    "mobile": "< 768px",
+    "tablet": "768px - 1024px",
+    "desktop": "> 1024px",
+    "2xl": "1400px"
+  },
+  "performance": {
+    "image_loading": "ES6 imports com Vite optimization",
+    "code_splitting": "React.lazy potencial",
+    "animations": "CSS transitions e keyframes",
+    "fonts": "Google Fonts com display=swap"
+  }
+}

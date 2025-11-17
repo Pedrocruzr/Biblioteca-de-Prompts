@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Open+Sans:wght@400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* RH Turbo 360 Design System - Landing Page de Alta Conversão */
+
+@layer base {
+  :root {
+    /* Background Colors (HSL) */
+    --bg-dark: 222 75% 6%; /* #0B1020 convertido */
+    --bg-light: 220 30% 96%; /* #F4F6FA */
+    
+    /* Text Colors */
+    --text-on-dark: 0 0% 100%; /* Branco puro */
+    --text-muted-dark: 214 32% 80%; /* #CBD5E1 */
+    --text-on-light: 222 75% 6%; /* Mesmo azul marinho */
+    
+    /* Accent Colors */
+    --accent-orange: 20 100% 62%; /* #FF8A3D */
+    --accent-magenta: 344 100% 59%; /* #FF2E6D */
+    --cta-pink: 344 100% 69%; /* #FF5F8F */
+    --cta-orange: 28 100% 68%; /* #FFA65C */
+    
+    /* Borders & Shadows */
+    --border-light: 220 13% 91%; /* #E5E7EB */
+    
+    /* Radius */
+    --radius: 1rem;
+    --radius-xl: 1.5rem;
+    
+    /* Gradients */
+    --gradient-cta: linear-gradient(135deg, hsl(var(--cta-pink)), hsl(var(--cta-orange)));
+    --gradient-cta-hover: linear-gradient(135deg, hsl(344 100% 64%), hsl(28 100% 63%));
+    
+    /* Shadows */
+    --shadow-soft: 0 10px 30px -10px hsl(222 75% 6% / 0.15);
+    --shadow-glow: 0 0 40px hsl(var(--cta-pink) / 0.3);
+    
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* Default theme tokens (mantendo compatibilidade) */
+    --background: 0 0% 100%;
+    --foreground: 222 75% 6%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 75% 6%;
+    --primary: 222 75% 6%;
+    --primary-foreground: 0 0% 100%;
+    --muted: 220 13% 91%;
+    --muted-foreground: 214 32% 60%;
+    --border: 220 13% 91%;
+    --ring: 344 100% 59%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply font-sans antialiased;
+    font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 700;
+  }
+}
+
+@layer components {
+  /* Section Backgrounds */
+  .section-dark {
+    @apply bg-[hsl(var(--bg-dark))] text-[hsl(var(--text-on-dark))];
+  }
+  
+  .section-light {
+    @apply bg-[hsl(var(--bg-light))] text-[hsl(var(--text-on-light))];
+  }
+  
+  /* Gradient Text */
+  .text-gradient {
+    @apply bg-gradient-to-r from-[hsl(var(--cta-pink))] to-[hsl(var(--cta-orange))] bg-clip-text text-transparent;
+  }
+  
+  /* Animations */
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.5s ease-out;
+  }
+  
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
