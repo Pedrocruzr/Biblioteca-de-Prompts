@@ -137,7 +137,7 @@ const VendasRHTurbo360 = () => {
       {/* Seção 2 — Identificação do Problema (CLARO) */}
       <SectionWrapper variant="light" id="problema">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="font-heading font-bold text-3xl md:text-4xl mb-8">Se você é profissional de RH ou gestor e está passando por isso...
+          <h2 className="font-heading font-bold text-3xl md:text-4xl mb-8">Se você é profissional de RH ou gestor e está <span className="text-gradient">passando por isso...</span>
           </h2>
           <div className="space-y-6 text-left">
             {[{
