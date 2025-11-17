@@ -9,8 +9,6 @@ import { ModuleCard } from "@/components/VendasRH/ModuleCard";
 import { TestimonialCard } from "@/components/VendasRH/TestimonialCard";
 import heroImage from "@/assets/hero-businesswoman.png";
 import pedroNetoImage from "@/assets/pedro-neto.png";
-import rhTurboLogo from "@/assets/rh-turbo-360-logo.png";
-import rhTurboHeaderLogo from "@/assets/rh-turbo-header-logo.png";
 import rhTurboHeroLogo from "@/assets/rh-turbo-hero-logo-new.png";
 import turboBadge from "@/assets/turbo-badge.png";
 import depoimentoChinita from "@/assets/depoimento-cintia-hq.jpeg";
@@ -69,7 +67,7 @@ const VendasRHTurbo360 = () => {
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto animate-fade-in">
           {/* Logo */}
           <div className="mb-8">
-            <img src={rhTurboHeroLogo} alt="RH Turbo 360 Logo" className="w-full max-w-[266px] md:max-w-[310px] h-auto" />
+            <img src={rhTurboHeroLogo} alt="RH Turbo 360 Logo" className="w-full max-w-2xl h-auto" />
           </div>
           
           {/* Headline */}
