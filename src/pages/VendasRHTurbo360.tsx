@@ -200,7 +200,7 @@ const VendasRHTurbo360 = () => {
                 <li className="flex gap-2 items-start">
                   <span className="text-rh-magenta mt-1">
                 </span>
-                  <span className="text-base text-rh-text-light/70"><strong className="text-rh-text-light">Diagnóstico Six Box:</strong>Coleta, organiza e traduz a cultura da empresa</span>
+                  <span className="text-base text-rh-text-light/70">Coleta, organiza e traduz a cultura da empresa</span>
                 </li>
               </ul>
             </div>
@@ -227,7 +227,7 @@ const VendasRHTurbo360 = () => {
                 <li className="flex gap-2 items-start">
                   <span className="text-rh-magenta mt-1">
                 </span>
-                  <span className="text-base text-rh-text-light/70"><strong className="text-rh-text-light">Analista de PDI:</strong>Planeja PDIs e aplica dinâmicas com IA</span>
+                  <span className="text-base text-rh-text-light/70">Planeja PDIs e aplica dinâmicas com IA</span>
                 </li>
               </ul>
             </div>
@@ -240,7 +240,7 @@ const VendasRHTurbo360 = () => {
                 <li className="flex gap-2 items-start">
                   <span className="text-rh-magenta mt-1">
                 </span>
-                  <span className="text-base text-rh-text-light/70"><strong className="text-rh-text-light">Onboarding Estratégico:</strong>Roteiros personalizados de onboarding e desligamento</span>
+                  <span className="text-base text-rh-text-light/70">Roteiros personalizados de onboarding e desligamento</span>
                 </li>
               </ul>
             </div>
