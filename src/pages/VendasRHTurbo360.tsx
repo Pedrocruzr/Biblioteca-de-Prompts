@@ -67,7 +67,7 @@ const VendasRHTurbo360 = () => {
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto animate-fade-in">
           {/* Logo */}
           <div className="mb-8">
-            <img src={rhTurboHeroLogoNew} alt="RH Turbo 360 Logo" className="w-full max-w-[399px] md:max-w-[465px] h-auto" />
+            <img src={rhTurboHeroLogoNew} alt="RH Turbo 360 Logo" className="w-full max-w-[599px] md:max-w-[698px] h-auto" />
           </div>
           
           {/* Headline */}
